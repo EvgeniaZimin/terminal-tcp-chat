@@ -23,15 +23,22 @@ A Python-based multi-user chat application over TCP sockets, built as a **learni
 ```bash
 git clone https://github.com/EvgeniaZimin/terminal-tcp-chat.git
 cd terminal-tcp-chat
+```
 
 ### 2. Install dependencies
+```bash
 pip install -r requirements.txt
+```
 
 ### 3. Run the server
+```bash
 python server.py
+```
 
 ### 4. Run the client
+```bash
 python client.py
+```
 
 📦 Requirements
 
