@@ -1,58 +1,92 @@
-# Terminal TCP Chat
+# 🛰️ Terminal TCP Chat
 
-A Python-based multi-user chat application over TCP sockets, built as a **learning project** to explore:
-- Network programming (sockets, TCP)
-- User authentication and password hashing
-- Public tunneling with **ngrok**
-- Secure multi-threaded client/server communication
+![Python](https://img.shields.io/badge/Python-3.10%2B-blue)
+![License: MIT](https://img.shields.io/badge/License-MIT-green)
+![Status](https://img.shields.io/badge/Status-Active-success)
 
----
-
-## 🚀 Features
-- ✅ Real-time multi-user chat over TCP
-- ✅ User registration and login
-- ✅ Password hashing with SHA256
-- ✅ Ngrok tunneling for remote connections
-- ✅ Clean CLI-based interface
+Multi-user **TCP chat** written in Python.  
+Includes **user authentication**, **SHA256 password hashing**, and **ngrok tunneling** for public access.
 
 ---
 
-## 🛠️ Installation & Usage
+## ✨ Features
+- Real-time **multi-user chat** over TCP sockets
+- **User registration & authentication** (SHA256 password hashing)
+- **ngrok tunneling** — expose local server to the internet
+- **Multi-threaded** server to handle multiple clients
+- Simple **CLI interface** and graceful disconnects
 
-### 1. Clone repository
+---
+
+## 🚀 Installation & Usage
+
+### 1) Clone the repository
 ```bash
-git clone https://github.com/EvgeniaZimin/terminal-tcp-chat.git
+git clone https://github.com/<your-username>/terminal-tcp-chat.git
 cd terminal-tcp-chat
 ```
-
-### 2. Install dependencies
+###2) Create and activate virtual environment (recommended)
+```bash
+python -m venv .venv
+# macOS / Linux
+source .venv/bin/activate
+# Windows (PowerShell)
+.\.venv\Scripts\activate
+```
+###3) Install dependencies
 ```bash
 pip install -r requirements.txt
 ```
+###4) Authorize ngrok (one-time)
+Get your token: https://dashboard.ngrok.com/get-started/your-authtoken
 
-### 3. Run the server
+```bash
+ngrok config add-authtoken <YOUR_NGROK_AUTHTOKEN>
+```
+
+###5) Run the server
 ```bash
 python server.py
 ```
+The server will ask for a TCP port (e.g., 54321).
+It will then start an ngrok tcp endpoint and print a link like:
+tcp://x.tcp.ngrok.io:12345
 
-### 4. Run the client
+###6) Run the client and connect
 ```bash
 python client.py
 ```
+Paste the full link (e.g., tcp://x.tcp.ngrok.io:12345) and follow prompts to choose a name and register/sign in.
 
-📦 Requirements
+📂 Project Structure
+```bash
+terminal-tcp-chat/
+├── server.py            # Chat server (TCP, threading, auth)
+├── client.py            # Chat client (TCP CLI)
+├── requirements.txt     # Dependencies (pyngrok)
+├── LICENSE              # MIT License
+└── README.md            # This file
+```
 
+🛠️ Tech Stack
+Language: Python 3.10+
+
+Stdlib: socket, threading, hashlib, select
+
+External: pyngrok
+
+Protocol: TCP/IP
+
+Tunneling: ngrok (tcp)
+
+Requirements
 Python 3.10+
 
-pyngrok
+pyngrok (installed via requirements.txt)
 
-Dependencies are listed in requirements.txt.
+🔐 Security Note
+Educational project.
+Do not use real credentials and do not run in production environments.
 
-🔒 Security Notes
-
-This project was built for educational purposes.
-Do not use it in production environments — authentication and encryption are minimal by design.
-
-📜 License
-
-Distributed under the MIT License.
+📄 License
+This project is licensed under the MIT License.
