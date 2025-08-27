@@ -22,7 +22,7 @@ Includes **user authentication**, **SHA256 password hashing**, and **ngrok tunne
 
 ### 1) Clone the repository
 ```bash
-git clone https://github.com/<your-username>/terminal-tcp-chat.git
+git clone https://github.com/EvgeniaZimin/terminal-tcp-chat.git
 cd terminal-tcp-chat
 ```
 ###2) Create and activate virtual environment (recommended)
