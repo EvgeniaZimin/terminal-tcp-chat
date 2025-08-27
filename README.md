@@ -25,7 +25,7 @@ Includes **user authentication**, **SHA256 password hashing**, and **ngrok tunne
 git clone https://github.com/EvgeniaZimin/terminal-tcp-chat.git
 cd terminal-tcp-chat
 ```
-###2) Create and activate virtual environment (recommended)
+2) Create and activate virtual environment (recommended)
 ```bash
 python -m venv .venv
 # macOS / Linux
@@ -33,18 +33,18 @@ source .venv/bin/activate
 # Windows (PowerShell)
 .\.venv\Scripts\activate
 ```
-###3) Install dependencies
+3) Install dependencies
 ```bash
 pip install -r requirements.txt
 ```
-###4) Authorize ngrok (one-time)
+4) Authorize ngrok (one-time)
 Get your token: https://dashboard.ngrok.com/get-started/your-authtoken
 
 ```bash
 ngrok config add-authtoken <YOUR_NGROK_AUTHTOKEN>
 ```
 
-###5) Run the server
+5) Run the server
 ```bash
 python server.py
 ```
@@ -52,7 +52,7 @@ The server will ask for a TCP port (e.g., 54321).
 It will then start an ngrok tcp endpoint and print a link like:
 tcp://x.tcp.ngrok.io:12345
 
-###6) Run the client and connect
+6) Run the client and connect
 ```bash
 python client.py
 ```
